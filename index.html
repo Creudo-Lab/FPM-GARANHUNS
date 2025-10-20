@@ -364,7 +364,7 @@
 
                 <div class="highlight">
                     <div class="title-wide">PREFEITURA MUNICIPAL</div>
-                    <div class="subtitle" id="subtitle">Camocim de São Félix</div>
+                    <div class="subtitle" id="subtitle">Garanhuns</div>
                 </div>
             
                 <div class="multiplier">
@@ -612,7 +612,7 @@
             const valorBrutoResultado = el('resultadoMultiplicacao').textContent;
             const totalDeducoes = el('totalDeducoes').textContent;
             const previsaoLiquida = el('previsaoLiquida').textContent;
-            const municipio = el('subtitle').textContent || 'Camocim de São Félix';
+            const municipio = el('subtitle').textContent || 'Garanhuns';
 
             if (previsaoLiquida === '0,00' || previsaoLiquida === '-') {
                 mostrarModal('Calcule um valor antes de solicitar a análise.');
@@ -639,7 +639,7 @@
             el('modal-botoes').style.display = 'none';
 
             const historicoFormatado = historico.slice(0, 10).reverse().map(item => `- Cota ${item.cota}/${item.mes}/${item.ano}: Valor Líquido R$ ${item.previsaoLiquida}`).join('\n');
-            const prompt = `Aja como um analista de dados financeiros especializado em finanças municipais. Analise os seguintes dados históricos de repasses líquidos do FPM para a prefeitura de Camocim de São Félix:\n${historicoFormatado}\n\nCom base exclusivamente nesses dados, identifique a principal tendência (crescimento, queda ou estabilidade) dos valores líquidos. Forneça um resumo executivo de uma frase. Depois, apresente 2 ou 3 observações principais em formato de lista, usando "• " para cada ponto. Mantenha a análise curta, objetiva e focada nos dados fornecidos.`;
+            const prompt = `Aja como um analista de dados financeiros especializado em finanças municipais. Analise os seguintes dados históricos de repasses líquidos do FPM para a prefeitura de Garanhuns:\n${historicoFormatado}\n\nCom base exclusivamente nesses dados, identifique a principal tendência (crescimento, queda ou estabilidade) dos valores líquidos. Forneça um resumo executivo de uma frase. Depois, apresente 2 ou 3 observações principais em formato de lista, usando "• " para cada ponto. Mantenha a análise curta, objetiva e focada nos dados fornecidos.`;
             
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${GEMINI_API_KEY}`;
             const payload = { contents: [{ parts: [{ text: prompt }] }] };
@@ -874,5 +874,6 @@
     </script>
 </body>
 </html>
+
 
 
